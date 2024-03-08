@@ -13,7 +13,7 @@ app.post('/submit-form', (req, res) => {
     const formData = req.body;
     console.log(formData);
     // Make a POST request to the provided URL
-    axios.post('https://mu2-staging.myutilities.com/api/referral/orders?token=eb3c0d97cde0485bb2d7c05eed7343b1', formData, {
+    axios.post(`https://mu2-staging.myutilities.com/api/referral/orders?token=${process.env.API_TOKEN}`, formData, {
         headers: {
             'Content-Type': 'application/json',
             'X-Version': '1.0'
