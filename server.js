@@ -11,9 +11,9 @@ app.use(cors());
 // Route to handle form submission
 app.post('/submit-form', (req, res) => {
     const formData = req.body;
-    console.log(formData);
+    const jsonData = JSON.stringify(formData);
     // Make a POST request to the provided URL
-    axios.post(`https://mu2-staging.myutilities.com/api/referral/orders?token=${process.env.API_TOKEN}`, formData, {
+    axios.post(`https://mu2-staging.myutilities.com/api/referral/orders?token=${process.env.API_TOKEN}`, jsonData, {
         headers: {
             'Content-Type': 'application/json',
             'X-Version': '1.0'
