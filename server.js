@@ -2,12 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const customerRoutes = require('./Routes/CustomerRoutes');
 const db = require('./config/db');
-
+const corsConif = {
+    origin: '*',
+    credential: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+}
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(cors());
+app.options('', cors(corsConif));
+app.use(cors(corsConif));
 
 app.use('/', customerRoutes);
 
