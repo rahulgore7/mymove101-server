@@ -29,6 +29,9 @@ const customerModel = new mongoose.Schema({
             type: String,
             required: true
         },
+        street2: {
+            type: String
+        },
         city: {
             type: String,
             required: true
@@ -41,6 +44,9 @@ const customerModel = new mongoose.Schema({
             type: String,
             required: true
         }
+    },
+    referralCode: {
+        type: String,
     }
 });
 
