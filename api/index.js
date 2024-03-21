@@ -21,3 +21,5 @@ db.once('open', () => {
         console.log(`Express server listening at http://localhost:${port}`);
     });
 });
+
+module.exports = app;
