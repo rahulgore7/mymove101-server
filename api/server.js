@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const customerRoutes = require('./Routes/CustomerRoutes');
-const db = require('./config/db');
+const customerRoutes = require('../Routes/CustomerRoutes');
+const db = require('../config/db');
 const corsConif = {
     origin: '*',
     credential: true,
