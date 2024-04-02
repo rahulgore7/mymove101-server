@@ -1,5 +1,5 @@
 const axios = require('axios');
-require("dotenv").config({ path: "./config/config.env" });
+require("dotenv").config();
 const customerModel = require('../models/customerModel');
 
 async function saveFormDataToMongoDB(formData) {
@@ -20,7 +20,7 @@ async function sendFormDataToServer(formData) {
             headers: {
                 'Content-Type': 'application/json',
                 'X-Version': '1.0'
-            }
+            }//rkjn
         });
         console.log('Response from server:', response.data);
         return response.data;

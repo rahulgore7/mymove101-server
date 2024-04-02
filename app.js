@@ -1,14 +1,15 @@
 const express = require('express');
+require("dotenv").config();
 const cors = require('cors');
-const customerRoutes = require('../Routes/CustomerRoutes');
-const db = require('../config/db');
+const customerRoutes = require('./Routes/CustomerRoutes');
+const db = require('./config/db');
 const corsConif = {
     origin: '*',
     credential: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 }
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.options('', cors(corsConif));
