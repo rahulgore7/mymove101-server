@@ -14,6 +14,7 @@ async function saveFormDataToMongoDB(formData) {
 }
 
 async function sendFormDataToServer(formData) {
+    console.log('Response from server:', response.data);
     try {
         const response = await axios.post(`https://mu2-staging.myutilities.com/api/referral/orders?token=${process.env.API_TOKEN}`, formData, {
             headers: {
@@ -22,7 +23,7 @@ async function sendFormDataToServer(formData) {
             }//rkjn
         });
         console.log(`Form Data Submitted to Server: ${formData}`)
-        console.log('Response from server:', response.data);
+
         return response.data;
     } catch (error) {
         console.error('Error sending form data to server:', error.message);
