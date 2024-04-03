@@ -6,7 +6,6 @@ async function saveFormDataToMongoDB(formData) {
     try {
         const newFormData = new customerModel(formData);
         const savedFormData = await newFormData.save();
-        console.log('Form data saved to MongoDB:', savedFormData);
         return savedFormData;
     } catch (error) {
         console.error('Error saving form data to MongoDB:', error.message);

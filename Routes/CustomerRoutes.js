@@ -8,11 +8,9 @@ const customerModel = require('../models/customerModel');
 router.post('/submit-form', async (req, res) => {
     try {
         const FullData = req.body;
-        console.log(FullData);
         const mongoResponse = await CustomerController.saveFormDataToMongoDB(FullData);
         console.log(mongoResponse);
         const { referralCode, ...userData } = req.body;
-        console.log(userData);
         const response = await CustomerController.sendFormDataToServer(userData);
         res.json(response);
     } catch (error) {
