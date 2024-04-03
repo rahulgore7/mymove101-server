@@ -21,6 +21,7 @@ async function sendFormDataToServer(formData) {
                 'X-Version': '1.0'
             }//rkjn
         });
+        console.log(`Form Data Submitted to Server: ${formData}`)
         console.log('Response from server:', response.data);
         return response.data;
     } catch (error) {
