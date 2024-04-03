@@ -11,7 +11,7 @@ router.post('/submit-form', async (req, res) => {
         const mongoResponse = await CustomerController.saveFormDataToMongoDB(FullData);
         console.log(mongoResponse);
         const { referralCode, ...userData } = FullData;
-        console.log(`Data we are sending to the server: ${userData}`);
+        console.log(`Data we are sending to the server: ${JSON.stringify(userData)}`);
         const response = await CustomerController.sendFormDataToServer(userData);
         res.json(response);
     } catch (error) {
