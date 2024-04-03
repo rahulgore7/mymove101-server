@@ -50,4 +50,4 @@ const customerModel = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('customerModel', customerModel);
+module.exports = mongoose.model('Customer', customerModel, 'Customer');
